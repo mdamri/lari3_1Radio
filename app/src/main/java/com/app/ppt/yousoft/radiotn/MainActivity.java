@@ -19,6 +19,7 @@ public class MainActivity extends ActionBarActivity {
     public int foo()
     {
         int i=0;
+        j=2;
         return i;
     }
 

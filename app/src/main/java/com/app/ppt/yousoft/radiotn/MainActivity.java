@@ -19,6 +19,7 @@ public class MainActivity extends ActionBarActivity {
     public int foo()
     {
         int i=0;
+        int j=2;
         for(int j=0;j<5; j++)
         {
             i=i+j;

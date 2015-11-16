@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< Updated upstream
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lari3_1Radio.iml" filepath="$PROJECT_DIR$/lari3_1Radio.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/lari3_1Radio.iml" filepath="$PROJECT_DIR$/.idea/lari3_1Radio.iml" />
+>>>>>>> Stashed changes
     </modules>
   </component>
 </project>
-

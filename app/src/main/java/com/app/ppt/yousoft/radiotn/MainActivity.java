@@ -1,6 +1,7 @@
 package com.app.ppt.yousoft.radiotn;
 //bassem 2
-//benammarrouaa 
+//benammarrouaa
+
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,6 +16,11 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public int foo()
+    {
+        int i=0;
+        return i;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

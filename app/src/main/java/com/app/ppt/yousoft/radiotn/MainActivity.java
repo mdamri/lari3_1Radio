@@ -41,7 +41,7 @@ public class MainActivity extends ActionBarActivity {
      ImageView.src="C:\\Users\\dell\\AndroidStudioProjects\\image.jpg";
      Button.Text="Play";
     }
-//abidi zohra12
+//abidi zohra123
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

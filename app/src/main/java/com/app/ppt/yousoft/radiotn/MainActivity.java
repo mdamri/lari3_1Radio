@@ -1,50 +1,53 @@
-package com.app.ppt.yousoft.radiotn;
+package com.example.roua.radiotn;
 
-//benammarrouaa
-
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.MotionEvent;
+public class MainActivity extends AppCompatActivity {
+    protected int seconds = 4;
 
-
-public class MainActivity extends ActionBarActivity {
+    Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        handler.removeCallbacks(runnable);
+        handler.postDelayed(runnable, 1000);
+
+
     }
 
-    public int foo()
-    {
-        int i=0;
-        for(int j=0;j<5; j++)
-        {
-            i=i+j;
+
+    private Runnable runnable = new Runnable() {
+        public void run() {
+            long currentMilliseconds = System.currentTimeMillis();
+            seconds--;
+            if (seconds > 0) {
+                handler.postAtTime(this, currentMilliseconds);
+                handler.postDelayed(runnable, 1000);
+            } else {
+                Intent it = new Intent(MainActivity.this,
+                        Main2Activity.class);
+                startActivity(it);
+                handler.removeCallbacks(runnable);
+                finish();
+            }
         }
-        return i;
-    }
+    };
+
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            handler.removeCallbacks(runnable);
+            Intent it = new Intent(MainActivity.this,
+                    Main2Activity.class);
+            startActivity(it);
+            finish();
+        }
         return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

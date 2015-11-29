@@ -1,7 +1,7 @@
 package com.app.ppt.yousoft.radiotn;
 
 //benammarrouaa
-
+//abidi zohra
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -33,15 +33,7 @@ public class MainActivity extends ActionBarActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-    //abidi zohra
-    private void ListeStationRadio()
-    {TextView1.Text = "Radio Sfax ";
-     TextView2.Text =" depuis le 8 décembre 1961 ; diffusant dans le Centre et le Sud-Est en arabe/" +
-                     "Sfax 106.6 MHz, Ghrayba 106.6, Mahress 88.5, Skhira 89.0, Ksour Essef 100.2, Tarza 100.8";
-     ImageView.src="C:\\Users\\dell\\AndroidStudioProjects\\image.jpg";
-     Button.Text="Play";
-    }
-//abidi zohra123
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

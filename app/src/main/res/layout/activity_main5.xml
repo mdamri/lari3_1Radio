@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="#695374">
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=" jawhara fm"
+        android:id="@+id/textView"
+        android:allowUndo="false"
+        android:autoText="false"
+        android:textAlignment="center"
+        android:textColor="#f11a1a8b"
+        android:textSize="40dp"
+        android:textIsSelectable="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="170dp"
+        android:id="@+id/imageView"
+        android:src="@mipmap/jawhara"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="90dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Radio généraliste dont les studios sont installés à Sousse, elle est lancée le 25 juillet 2005 par la voix de Walid Besbes. Le nom Jawhara FM renvoie au surnom qu'on donne en Tunisie à la ville de Sousse, la « perle du Sahel », le mot jawhara en arabe signifiant « perle »
+        android:id="
+        android:id="@+id/textView3"
+        android:textSize="25dp"
+        android:textIsSelectable="false"
+        android:layout_below="@+id/imageButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+    <TextView
+    android:textSize="22dp"
+    android:textIsSelectable="true"
+    android:textColor="#000709"
+    android:layout_centerHorizontal="true"
+    android:layout_alignParentBottom="true"
+    android:textAlignment="textStart"
+    android:layout_below="@+id/imageButton"
+    android:background="#c1bca3" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageButton"
+        android:src="@mipmap/play"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageButton2"
+        android:src="@mipmap/map"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_alignTop="@+id/imageButton3"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageButton3"
+        android:src="@mipmap/stop"
+        android:layout_below="@+id/imageView"
+        android:layout_toLeftOf="@+id/imageButton2"
+        android:layout_toStartOf="@+id/imageButton2" />
+</RelativeLayout>

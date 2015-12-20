@@ -1,46 +1,165 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+	    android:layout_width="fill_parent"
+    	android:layout_height="fill_parent" 
+    	android:orientation="vertical"
+    	android:background="@drawable/background"
+    	android:id="@+id/RootView"
+    	tools:context=".MainActivity">
+		
+	<RelativeLayout
+	    android:id="@+id/mainLayout"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_weight="1" >
+	
+		<TextView
+		    android:id="@+id/titleTextView"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentTop="true"
+		    android:layout_centerHorizontal="true"
+			android:minWidth="255dp"
+			android:text="@string/app_name"
+		    android:textAppearance="?android:attr/textAppearanceLarge"
+		    android:textSize="20sp"
+			android:layout_marginLeft="10dp"
+			android:enabled="false"
+			android:gravity="left" />
+		
+		<View
+    		android:layout_width="fill_parent"
+    		android:layout_marginLeft="12dp"
+		    android:layout_marginRight="12dp"
+    		android:layout_height="1dip"
+    		android:background="#555555" 
+    		android:layout_below="@+id/titleTextView"
+			android:id="@+id/view" />
+		
+		
+	
+		<ImageView
+		    android:id="@+id/stationImageView"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+			android:src="@drawable/station_default"
+			android:layout_below="@+id/view"
+			android:layout_alignLeft="@+id/view" />
 
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:background="@drawable/dra"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
-    <ImageView
-        android:layout_width="340dp"
-        android:layout_height="200dp"
-        android:id="@+id/imageView"
-        android:src="@drawable/ii"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/textView" />
+		<TextView
+		    android:id="@+id/artistTextView"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentTop="true"
+		    android:layout_marginTop="40dp"
+		    android:layout_alignLeft="@+id/stationImageView"
+		    android:gravity="left"
+		    android:text=""
+		    android:textSize="12sp" />
 
-    <TextView
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:textAlignment="center"
-        android:textStyle="italic"
+		<TextView
+		    android:id="@+id/trackTextView"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentTop="true"
+		    android:layout_marginTop="55dp"
+		     android:layout_alignLeft="@+id/stationImageView"
+		    android:gravity="left"
+		    android:text="Current Playing Track"
+		    android:textAppearance="?android:attr/textAppearanceMedium"
+		    android:textSize="14sp" />
 
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Radio-TN"
-        android:id="@+id/textView2"
-        android:textSize="50dp"
-        android:textIsSelectable="false"
-        android:textColor="#7a7676"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+		<TextView
+		    android:id="@+id/albumTextView"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignBaseline="@+id/artistTextView"
+		    android:layout_alignBottom="@+id/artistTextView"
+		    android:layout_alignRight="@+id/stationImageView"
+		    android:gravity="right"
+		    android:text="Album"
+		    android:textSize="12sp" />
 
-    <TextView
-        android:layout_width="400dp"
-        android:layout_height="300dp"
-        android:text="Comme son indiqué vous retrouvez dans l'application Radio-TN tout les radios de la Tunisie.Elle vous donne méme l'accée au vidéo Streaming.Find us under: facebook:https://www.facebook.com/StationRadio-792332527544667/?fref=ts"
-        android:textStyle="bold"
-        android:id="@+id/textView"
-        android:textSize="25dp"
-        android:textIsSelectable="false"
-        android:textColor="#080808"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+		<TextView
+		    android:id="@+id/statusTextView"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_above="@+id/volumebar"
+		    android:layout_centerHorizontal="true"
+		    android:textSize="12sp"
+		    android:paddingBottom="5dp"
+		    android:text="@string/status_noconnection" />
 
-</RelativeLayout>
+		<Button
+		    android:id="@+id/PauseButton"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:layout_alignLeft="@+id/titleTextView"
+		    android:layout_marginBottom="0dp"
+		    android:background="@drawable/btn_pause"
+		    android:onClick="onClickPauseButton" />
+	
+		<Button
+		    android:id="@+id/PlayButton"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:layout_alignLeft="@+id/titleTextView"
+		    android:layout_marginBottom="0dp"
+		    android:background="@drawable/btn_play"
+		    android:onClick="onClickPlayButton" />
+	
+		<Button
+		    android:id="@+id/StopButton"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:layout_alignBottom="@+id/adLayout"
+		    android:layout_alignRight="@+id/titleTextView"
+		    android:layout_marginBottom="0dp"
+		    android:background="@drawable/btn_stop"
+		    android:onClick="onClickStopButton" />
+		
+		<Button
+		    android:id="@+id/NextButton"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:layout_toLeftOf="@+id/StopButton"
+		    android:layout_marginBottom="0dp"
+		    android:background="@drawable/btn_next"
+		    android:onClick="onClickNextButton" />
+		
+		<Button
+		    android:id="@+id/PreviousButton"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:layout_toRightOf="@+id/PlayButton"
+		    android:layout_marginBottom="0dp"
+		    android:background="@drawable/btn_previous"
+		    android:onClick="onClickPreviousButton" />
+
+		<ImageView
+		    android:id="@+id/vol"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignBottom="@+id/volumebar"
+		    android:layout_alignLeft="@+id/stationImageView"
+		    android:layout_alignTop="@+id/volumebar"
+		    android:src="@drawable/icon_volume" />
+
+		<SeekBar
+		    android:id="@+id/volumebar"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+			android:layout_toRightOf="@+id/vol"
+		    android:paddingLeft="5dp"
+			android:layout_above="@+id/PauseButton"
+			android:layout_alignRight="@+id/StopButton" />
+
+	</RelativeLayout>
+
+</LinearLayout>
